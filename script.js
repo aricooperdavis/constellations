@@ -15,7 +15,7 @@ window.onload = function(){
 
     // Redirect after countdown ends
     if (diff < 0) {
-      window.location.replace('https://www.youtube.com/embed/-C1xg8JWqEA');
+      redirect();
     }
 
     // Glitch timestamp every 10s
@@ -33,13 +33,29 @@ window.onload = function(){
       text = '..constellations...';
     }
 
-
     h1.textContent = text;
 
     setTimeout(update, 1000);
   })();
 }
 
+document.onkeydown = function(e){
+  user_keys.push(e.keyCode)
+  if (user_keys.toString().indexOf(konami) >= 0) {
+      redirect();
+      user_keys = [];
+  }
+}
+
+/* zero pad single digits */
 function zp(i) {
   return ('0'+i).slice(-2);
 }
+
+/* redirect on timer end */
+function redirect() {
+  window.location.replace('https://www.youtube.com/embed/-C1xg8JWqEA');
+}
+
+let user_keys = [],
+  konami = '38,38,40,40,37,39,37,39,66,65';
