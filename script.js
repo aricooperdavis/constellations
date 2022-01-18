@@ -40,12 +40,9 @@ window.onload = function(){
 }
 
 document.onkeydown = function(e){
-  user_keys.push(e.keyCode)
+  user_keys = user_keys.slice(-9).concat(e.keyCode)
   if (user_keys.toString().indexOf(konami) >= 0) {
     redirect();
-  }
-  if (user_keys.length > 10) {
-    user_keys = [];
   }
 }
 
