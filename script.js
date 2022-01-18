@@ -13,6 +13,11 @@ window.onload = function(){
       s = diff-(w*7*24*60*60+d*24*60*60+h*60*60+m*60);
     let text = `${zp(w)}w ${zp(d)}d ${zp(h)}h ${zp(m)}m ${zp(s)}s`;
 
+    // Redirect after countdown ends
+    if (diff < 0) {
+      window.location.replace('https://www.youtube.com/embed/-C1xg8JWqEA');
+    }
+
     // Glitch timestamp every 10s
     if ([3,5].includes(s%10)) {
       let _text = '';
