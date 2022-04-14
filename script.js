@@ -53,7 +53,7 @@ function zp(i) {
 
 /* redirect on timer end */
 function redirect() {
-  window.location.replace('https://www.youtube.com/embed/-C1xg8JWqEA');
+  window.location.replace('https://constellations.fmcity.space');
 }
 
 let user_keys = [],
